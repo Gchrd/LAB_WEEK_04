@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
+import com.google.android.material.bottomnavigation.BottomNavigationView // <-- Add this line
 import com.google.android.material.navigation.NavigationView
+
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,11 +21,14 @@ class MainActivity : AppCompatActivity() {
         //and adding them to the draw
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.listFragment, R.id.favoritesFragment
+                R.id.listFragment, R.id.favoritesFragment, R.id.cafeFragment
             ), findViewById(R.id.drawer_layout)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         findViewById<NavigationView>(R.id.nav_view)
+            ?.setupWithNavController(navController)
+        // Added this part only
+        findViewById<BottomNavigationView>(R.id.bottom_nav)
             ?.setupWithNavController(navController)
     }
     override fun onSupportNavigateUp(): Boolean {
