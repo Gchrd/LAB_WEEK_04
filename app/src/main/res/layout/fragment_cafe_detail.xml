@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:padding="30dp"
+    tools:context=".CafeDetailFragment">
 
     <TextView
-        android:id="@+id/cafe_detail_text"
+        android:id="@+id/content_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cafe Detail"
-        android:textSize="20sp"/>
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:lineSpacingExtra="4dp"
+        android:text=""/>
 </FrameLayout>
